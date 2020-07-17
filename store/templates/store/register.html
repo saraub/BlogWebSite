@@ -1,0 +1,51 @@
+<body style="background-color: gray;">
+
+    <div style="border: 90px;margin-left: 100px; margin-right: 100px;  background-color:wheat; border-radius: 5px; border-color: gray;">
+        <h2 style="font-size: 80px;color:gray; margin-top: 70px; text-align: center;">REGISTER PAGE</h2>
+
+
+        <form style="text-align: center; " method="POST" action="">
+            {% csrf_token %}
+       <div>
+        {{form.username.label}}
+        {{form.username}}
+       </div>
+    
+       <br>
+       <div>
+            
+        {{form.email.label}}
+        {{form.email}}
+       </div>
+       <br>
+        <div>
+            {{form.password1.label}}
+            {{form.password1}}
+        </div>
+        <br>
+    <div>
+        {{form.password2.label}}
+        {{form.password2}}  
+    </div>
+    
+           
+           
+           
+    
+            {{form.errors}}
+    
+            <br>
+            <br>
+            <br>
+            <br>
+    
+        <div>
+            <input style="height: 10%;border-radius: 5px; width: 20%; font-size: 20px; font-weight: bold; color: grey;" value="REGISTER" type="submit" name="Create User">
+            <br>
+    
+        </div>
+    
+        </form>
+    </div>
+   
+</body>

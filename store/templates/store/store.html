@@ -1,0 +1,57 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+	.icon{
+		max-width: 90px;
+		max-height:90px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+</style>
+
+<div style="text-align: center; color: gray;">
+
+    <h2 style=" font-size: 120px;">DASH BOARD</h2>
+
+    {% for blog in blogposts %}
+    
+    <div style=" width: 600px;
+    border: 15px solid gray;
+    padding: 50px;
+    border-radius: 20px;
+    margin: 20px; display: flexbox;">
+
+
+        <div style="font-weight: bold; font-size: 40px;">
+            {{blog.name}} 
+            <img class="icon" src="{{blog.user.customer.image.url}}" >
+        </div>
+          
+        <div>
+            {{blog.content}}
+        </div>
+       
+        
+            
+        
+        <div style="background-color: honeydew;">
+            {{blog.date_created}}
+        </div>
+
+    </div>
+        {% endfor %}
+
+    
+   
+
+
+</div>
+
+
+
+{% endblock %}
+
+

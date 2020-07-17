@@ -1,0 +1,28 @@
+<body>
+    <h2 style="font-size: 60px;color:gray; margin-top: 70px; text-align: center;">LOGIN PAGE</h2>
+    <form style="text-align: center; color: grey; font-weight: bold; " method="POST" action="">
+        {% csrf_token %}
+    
+     
+        <input style="width: 60%; border-radius: 20px;border: 5px solid gray; height: 10%;" type="text" name='username' placeholder="username">
+        <input style="height: 10%; border-radius: 20px;border: 5px solid gray; " type="password" name='password' placeholder="password">
+        {% for message in messages %}
+        <p id="messages">{{message}}</p>
+        {% endfor %}
+        <br>
+        <br>
+        <br>
+        <br>
+    
+        <div>
+            <input style="height: 10%;border-radius: 5px; width: 20%; font-size: 20px; font-weight: bold; color: grey;" value="LOG IN" type="submit" name="Log in">
+    
+        </div>
+       
+    
+    
+    </form>
+
+</body>
+
+

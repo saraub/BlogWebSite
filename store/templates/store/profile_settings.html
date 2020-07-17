@@ -1,0 +1,54 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+</style>
+
+<br>
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Profile</a>
+			<hr>
+			<h3 style="text-align: center">Profile Settings</h3>
+			<hr>
+			<img class="profile-pic" src="{{request.user.customer.image.url}}" >
+		
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="card card-body">
+			
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div>
+					<h6>Nick Name</h6>
+					{{form.name}}
+				</div>
+				
+				<div>
+					<h6>Your Profile Picture!</h6>
+					{{form.image}}
+				</div>
+				<div>
+					<h6>Write Something about You!</h6>
+					{{form.profile.as_textarea}}
+				</div>
+				
+
+				
+		
+			<input class="btn btn-primary" type="submit" name="Update Information">
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

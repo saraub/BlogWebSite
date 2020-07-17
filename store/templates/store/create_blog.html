@@ -1,0 +1,53 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    
+
+</style>
+
+<div style="color: gray;">
+    <form method="POST" action="" >
+        <div style="justify-content:center; text-align: center;">
+            <h3>New Entry</h3>
+            {% csrf_token %}
+            <h6>Title</h6>
+            {{form.name}}
+            <h6>Short Summary</h6>
+            {{form.shortdescription}}
+            <h6>Blog Content</h6>
+
+            
+            
+            {{form.content.as_textarea}}
+
+            
+            
+            
+            <br>
+            
+
+               
+            <div>
+                <input class="custmon_btn" type="submit" name="Update Information">
+            </div>
+            
+            
+        </form>
+        </div>
+       
+
+       
+    
+    
+    
+   
+    
+    
+    {% endblock %}
+
+
+</div>
+
+
