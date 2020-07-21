@@ -3,13 +3,13 @@
 {% load static %}
 <html>
 <head>
-	<title>Ecom</title>
+	<title>Blog</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
 
 	<script type="text/javascript">
 		var user = '{{request.user}}'
@@ -64,7 +64,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-dark bg-dark" >
+	<nav class="navbar navbar-dark " style ="background-color: hsl(32, 32%, 45%);" >
 	  <a class="navbar-brand" href="{% url 'home' %}">HOME</a><span style="color: white;">You are logged in as {{request.user}}</span>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>

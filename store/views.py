@@ -91,9 +91,9 @@ def logoutUser(request):
 
 def userPage(request):
    
-    
+    user=request.user.customer
     blogposts= Item.objects.filter(user=request.user)
-    context= {'blogposts':blogposts}
+    context= {'blogposts':blogposts,'user':user}
     return render(request,'store/user.html',context)
 
 @login_required(login_url='login')

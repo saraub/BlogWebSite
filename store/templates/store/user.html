@@ -4,41 +4,58 @@
 
 
 {% block content %}
-<div style="text-align: center; color: gray;">
+<body style="background-image: url(/blogwebsite/static/images/b.jpg); "> 
 
-  <h2 style="color: gray;">My Blogs</h2>
-    
-
-        {% for blog in blogposts %}
-        <div style="width: 600px;
-    border: 5px solid gray;
-    border-radius: 10%;
-    background-color: whitesmoke;
-    padding: 5px; display: flexbox;
-   ">
-            <div style="font-size: 60px;font-weight: bold;
-            margin-top:1px;">
-                {{blog.name}}
-            
-            </div>
-            <div >
-            {{blog.content}}
-                
-            </div>
-            <div style="background-color:royalblue;color: whitesmoke;">
-                {{blog.date_created}}
-                
-            </div>
+  <div class="header">
+    <h2 style="font-weight: bold; color: hsl(355, 37%, 26%);">My Page</h2>
+  
+  </div>
+  
+  <div>
+    {% for blog in blogposts %}
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>{{blog.name}}</h2>
+        <h5>{{blog.date_created}}</h5>
         
-        </div>
-        <br>
+        <p>{{blog.content}}</p>
+      </div>
+    </div>
+    {% endfor %} 
+    
+     
+    <div >
+      <div class="card">
+        <h2 style="display: inline">About Me</h2><span>{{user.name}}</span>
+        <form action="{% url 'profile_settings' %}">
+          <button class="btn1">Change Profile</button> 
+        </form>
+        
+        <div class="fakeimg" >
+          <img class='pr_img' src="{{user.image.url}}" ></div>
+        <p>{{user.profile}}</p>
+      </div>
+      <div class="card">
+        <h3>Popular Post</h3>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div>
+      </div>
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+  
+ 
 
-        {% endfor %}
 
 
-   
+</body>
 
 
 
-    {% endblock %}
-</div>
+
+
+{% endblock %}

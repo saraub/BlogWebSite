@@ -3,14 +3,7 @@
 {% block content %}
 
 
-<style>
-	.icon{
-		max-width: 90px;
-		max-height:90px;
-		margin: 0 auto;
-		border-radius: 50%;
-	}
-</style>
+
 
 <div style="text-align: center; color: gray;">
 
@@ -18,14 +11,10 @@
 
     {% for blog in blogposts %}
     
-    <div style=" width: 600px;
-    border: 15px solid gray;
-    padding: 50px;
-    border-radius: 20px;
-    margin: 20px; display: flexbox;">
+    <div class="box">
 
 
-        <div style="font-weight: bold; font-size: 40px;">
+        <div >
             {{blog.name}} 
             <img class="icon" src="{{blog.user.customer.image.url}}" >
         </div>
@@ -37,7 +26,7 @@
         
             
         
-        <div style="background-color: honeydew;">
+        <div class="date">
             {{blog.date_created}}
         </div>
 

@@ -9,4 +9,105 @@
 }
 
 
+.box{
 
+   
+    border: 15px solid gray;
+    background-color: rgba(1, 1,1,0.5);
+    padding: 50px;
+    border-radius: 20px;
+    margin: 20px; display: flexbox;
+
+
+}
+.icon{
+    max-width: 90px;
+    max-height:90px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.date{
+
+    background-color:rgba(255,255,255,.5);
+}
+
+body {
+    font-family: Arial;
+    padding: 20px;
+    color: hsl(355, 37%, 26%);
+    background: #f1f1f1;
+    font-weight: bold;
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    column-count: 2;
+    column-gap: 9px;
+    padding: 30px;
+    
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    background:rgba(255,255,255,.5)
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {
+    float: left;
+    margin-right: 9px;
+    width: 72%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    height: 85%;
+    width: 25%;
+    padding-left: 20px;
+  }
+  .btn1{
+    margin-bottom: 3px;
+    border-radius: 5px;
+    border:5px;
+    font-weight: bold;
+    background-color: hsl(32, 32%, 45%);
+    color: hsl(37, 93%, 53%);
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color:rgba(255,255,255,.5);
+    
+    width: 100%;
+    padding: 20px;
+  }
+  .pr_img{
+    width: 200px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background:rgba(255,255,255,.5);
+    padding: 20px;
+    border: yellowgreen 7px;
+    margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+ 
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }
