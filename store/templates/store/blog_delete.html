@@ -1,0 +1,17 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<form method="POST" action="" >
+    {% csrf_token %}
+    <label>Are you sure you want to delete {{item.name}}?</label>
+    <button class='btn1' type="submit">YES</button>
+</form>
+
+
+
+
+{% endblock %}

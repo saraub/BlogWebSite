@@ -1,0 +1,38 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+    <div style="color: hsl(355, 37%, 26%);" >
+        <form method="POST" action="" >
+            <div style="justify-content:center; text-align: center;">
+                <h3>Leave Comment</h3>
+                {% csrf_token %}
+                <h6>Comment</h6>
+                {{form.content}}
+                <p type="hidden" >{{form.item}}</p>
+         
+                <br>
+         
+                <div>
+                    <input class="btn1" type="submit" name="Update Information">
+                </div>
+                
+            </div>    
+        </form>
+            
+  
+        
+    </div>
+        
+  
+{% endblock %}
+
+
+
+
+
+
+

@@ -2,14 +2,6 @@
 {% load static %}
 {% block content %}
 
-<style>
-	.profile-pic{
-		max-width: 200px;
-		max-height:200px;
-		margin: 0 auto;
-		border-radius: 50%;
-	}
-</style>
 
 <br>
 <div class="row">
@@ -38,13 +30,18 @@
 					{{form.image}}
 				</div>
 				<div>
+					<br>
 					<h6>Write Something about You!</h6>
 					{{form.profile.as_textarea}}
 				</div>
-				
-
-				
-		
+				<div>
+					<h6>facebook Url</h6>
+					{{form.facebok}}
+					<h6>Twitter Url</h6>
+					{{form.twitter}}
+				</div>
+				<br>
+	
 			<input class="btn btn-primary" type="submit" name="Update Information">
 			</form>
 		</div>

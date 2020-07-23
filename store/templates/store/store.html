@@ -4,41 +4,52 @@
 
 
 
+    <div>
 
-<div style="text-align: center; color: gray;">
-
-    <h2 style=" font-size: 120px;">DASH BOARD</h2>
-
-    {% for blog in blogposts %}
+        <h2 class='header1'>DASH BOARD</h2>
     
-    <div class="box">
+        {% for blog in blogposts %}
+        
+    
+        <div class="wrapper blogpost">
+            <div >
+                {{blog.name}} 
+                <img class="icon" src="{{blog.user.customer.image.url}}" >
+            </div>
+                
+            <div>
+                {{blog.content}}
+            </div>
+            <form method="POST" action="{% url 'comment' %}">
+                {% csrf_token%}
 
+                <button type="submit" name='blog_id' value="{{blog.id}}" class="btn1">Leave comment</button>
+            </form>
+           
+            <form action="{% url 'likes' %}" method="POST">
+                {% csrf_token%}
+                {% if blog.is_liked %}
+                    <button class='btn1' type="submit"name='blog_id' value='{{blog.id}}'><img  id="heart" src="{% static 'images/liked.png' %}"> liked</button>
+                {% else %}
+                    <button class='btn1' type="submit"name='blog_id' value='{{blog.id}}'><img  id="heart" src="{% static 'images/heart.png' %}"> like?</button>
+                {% endif %}
 
-        <div >
-            {{blog.name}} 
-            <img class="icon" src="{{blog.user.customer.image.url}}" >
-        </div>
-          
-        <div>
-            {{blog.content}}
-        </div>
-       
+            </form>
+            
+            
+            <div>
+                {{blog.date_created}}
+            </div>
+            {{blog.comment}}
+    
         
             
-        
-        <div class="date">
-            {{blog.date_created}}
         </div>
-
-    </div>
         {% endfor %}
-
+       
     
-   
-
-
-</div>
-
+    
+    </div>
 
 
 {% endblock %}

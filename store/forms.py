@@ -27,6 +27,11 @@ class BlogForm(ModelForm):
         
         exclude =['user']
         
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields= '__all__'
+        exclude=['user','item']
         
  
         

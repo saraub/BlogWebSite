@@ -3,11 +3,11 @@
 {% block content %}
 
 
-<body style="background-image: url(/blogwebsite/static/images/b.jpg); " >
 
-    <div style="color: hsl(355, 37%, 26%);" >
+
+    <div style="color: tomato;">
         <form method="POST" action="" >
-            <div style="justify-content:center; text-align: center;">
+            <div>
                 <h3>New Entry</h3>
                 {% csrf_token %}
                 <h6>Title</h6>
@@ -15,43 +15,26 @@
                 <h6>Short Summary</h6>
                 {{form.shortdescription}}
                 <h6>Blog Content</h6>
-    
-                
-                
+          
                 {{form.content.as_textarea}}
     
                 
-                
-                
                 <br>
-                
-    
-                   
+              
                 <div>
                     <input class="btn1" type="submit" name="Update Information">
                 </div>
                 
                 
-            </form>
+           
             </div>
+        </form>
            
-    
-           
-        
-        
-        
-        </div>
-        
-        
-        {% endblock %}
-    
+ 
+    </div>
 
 
-
-</body>
-
-
-
+{% endblock %}
 
 
 

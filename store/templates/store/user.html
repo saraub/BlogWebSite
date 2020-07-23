@@ -1,15 +1,11 @@
 {% extends 'store/main.html' %}
 {% load static %}
 
-
-
 {% block content %}
-<body style="background-image: url(/blogwebsite/static/images/b.jpg); "> 
 
-  <div class="header">
-    <h2 style="font-weight: bold; color: hsl(355, 37%, 26%);">My Page</h2>
+
   
-  </div>
+  <h2 class='header1'>My Page</h2>
   
   <div>
     {% for blog in blogposts %}
@@ -19,7 +15,18 @@
         <h5>{{blog.date_created}}</h5>
         
         <p>{{blog.content}}</p>
-      </div>
+        <form method="POST"  action="{% url 'blog_edit' blog.id %}">
+          {% csrf_token %} 
+          <button class='btn1' value="{{blog.id}}" type="submit">Edit
+
+          </button>
+        </form>
+           
+        <a href="{% url 'delete' blog.id %}"><button class='btn1'>Delete the post</button></a>
+        
+        </div>
+
+       
     </div>
     {% endfor %} 
     
@@ -33,29 +40,24 @@
         
         <div class="fakeimg" >
           <img class='pr_img' src="{{user.image.url}}" ></div>
-        <p>{{user.profile}}</p>
+        <p style="text-align: center;">{{user.profile}}</p>
       </div>
       <div class="card">
-        <h3>Popular Post</h3>
-        <div class="fakeimg">Image</div><br>
-        <div class="fakeimg">Image</div><br>
-        <div class="fakeimg">Image</div>
+        <h3>Liked Post</h3>
+        {% for post in likedpost%}
+        <div>
+          
+          {{post.name}} by <a href="{% url 'userpage' %}">{{post.user.username}}</a> 
+         
+        </div>
+        {% endfor %} 
       </div>
-      <div class="card">
+      <div class="card follow_me">
         <h3>Follow Me</h3>
-        <p>Some text..</p>
+        <p><img class="icon_foto" src ="/blogwebsite/static/images/fb.png"><a href="{{user.facebok}}">Facebook</a></p><p><img class="icon_foto" src ="/blogwebsite/static/images/tw.png"><a href="{{user.twitter}}">Twitter</a></p>
       </div>
     </div>
   </div>
-  
- 
-
-
-
-</body>
-
-
-
 
 
 {% endblock %}
