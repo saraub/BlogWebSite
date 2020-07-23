@@ -15,13 +15,6 @@ from .models import *
 
 # Create your views here.
 
-@login_required(login_url='login')
-@admin_only
-def home(request):
- 
-    
-    return render(request,'store/home.html')
-
 
 def store(request):
     
@@ -85,7 +78,7 @@ def loginPage(request):
        user=authenticate(request, username=username,password= password)
        if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('store')
        else:
            messages.info(request, 'Username or Password is incorrect')
            
@@ -106,11 +99,13 @@ def userPage(request):
     blogposts= Item.objects.filter(user=request.user)
     context= {'blogposts':blogposts,'user':user,'likedpost':likedpost}
     return render(request,'store/user.html',context)
+
+
 def delete(request,blog_id):
     item=Item.objects.get(id=blog_id)
     if request.POST:
         item.delete()
-        return redirect('home')
+        return redirect('store')
     context={'item':item}
     return render(request,'store/blog_delete.html',context)
 
@@ -124,7 +119,7 @@ def profile_settings(request):
         form= CustomerForm(request.POST,request.FILES,instance=customer)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('store')
             
     context={'form':form}
     return render(request,'store/profile_settings.html',context)
@@ -145,7 +140,7 @@ def comment(request):
             instance.item_in=Item.objects.filter(id=blog)
             instance.save()
             
-            return redirect('home')
+            return redirect('store')
 
     context={'form':form}
     return render(request,'store/comment.html',context)
@@ -184,7 +179,7 @@ def blog_creation(request):
                 instance.user=request.user
                 instance.save()
                 
-                return redirect('home')
+                return redirect('store')
         
     context={'form': form}
     return render(request, 'store/create_blog.html',context)
@@ -201,7 +196,7 @@ def blog_edit(request,blog_id):
         form= BlogForm(request.POST,request.FILES,instance=item)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('store')
      
     context={'form':form,'item':item}
  
