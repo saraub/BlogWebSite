@@ -15,3 +15,4 @@ Log in
 
 ![ScreenShot](/screenshots/num4.png)
 Change profile settings
+![ScreenShot](/screenshots/num5.png)
