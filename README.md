@@ -1,7 +1,6 @@
                                       BlogWebSite
 
-![alt text](https://lh3.googleusercontent.com/cyak7nvsA3K6cPh564mEeMbDmShn9sKRAxkb-eiY4LepA9iHVeLiYQoe2rm8yMYxxg7xuxP7ZMC3wB4Qlo0aGcQcL05Xdt7AOebRJdHMuFMCq9rfDYAsLNkX80LPma6X_O9IcPja_WtFqSKTFBYQnrf5ctCt2cv6JL74aGhGVe3KK7gfrWhWvIF2xPTXigCyIGFeao8sdtI213jsJu6WQ9-GQhZpjH1JPX-MZS21FVhy5tbCWpdXCf9LL2XDaYnO7JWxklH7VicRA5k1W_soHCOn35XzV2GepHYNm13SeFCP3ePDf9Vmx7IT7oJSxpZ3pGIkuhKr1rukz2GyIbOHgRiVqlg9t8sFISGf46B-8RHL6VuPS_qHAd0rGKMGxxf3Y1RLr4CCFPsNBaCO2E0QIUtNOhM9lKCDQUm2Mr1zwmMmiJ-OHinZWkPkIaz2wXx-hAxqYmfjOHpftYQnuSe-rJLQQ-sDC95Gsjn_I9msChJScQY8vkbD2GWR1_iHSGYrGTTdZOGVEHdo-4dNH_H7WKpbD7JPf-SA2YFJ-HHdrtmeawsvVevQAs_Q9vv5UVYWukjkB9vUWyL-dbXFhh8PXIzFJ7Sf977N_JsFMoDgu8xK1X_awscXqBY_zrxmKW2dPD3Jbm-rzBmEp1qqw3v9YaP-2Avs4IMgLAoaFP5rrs3PH8bwptar83av5uiW=w883-h808-no?authuser=0)
-Read others blog posts. Like and dislike as you wish.
+![ScreenShot](/screenshots/num1.png)
 
 
 
