@@ -7,15 +7,17 @@
     {% for blog in blogposts %}
     
 
-    <div class="row" style="background-color: darkcyan">
+    <div class="row" style="background-color:gainsboro">
         <div class="col s12" >
             <ul class="collection blue-grey darken-1">
-                <li class="collection-item avatar" style="background-color: darkcyan">
+                <li class="collection-item avatar" style="background-color:whitesmoke">
                     <img class="circle"  src="{{blog.user.customer.image.url}}" >
-                    <span class="title">{{blog.name}}</span>
+                    <span style="font-weight: bold;" class="title">{{blog.name}}</span>
+                    <br/>
+                    <br/>
                     <p class="title">{{blog.content}}</p>
                     <p>
-                        <form method="POST" action="{% url 'comment' %}">
+                        <form style="margin:auto; width: 180px;" method="POST" action="{% url 'comment' %}">
                             {% csrf_token%}
                             <div >
 
@@ -23,12 +25,12 @@
                             <button style="margin-bottom: 4px;" class="waves-effect waves-light btn" type="submit" name='blog_id' value="{{blog.id}}">Leave comment</button>
                         </form>
                         
-                        <form action="{% url 'likes' %}" method="POST">
+                        <form style="margin:auto; width: 180px;" action="{% url 'likes' %}" method="POST">
                             {% csrf_token%}
                             {% if blog.is_liked %}
-                                <button class="waves-effect waves-light btn" type="submit"name='blog_id' value='{{blog.id}}'><img  id="heart" src="{% static 'images/liked.png' %}">Liked</button>
+                                <button class="waves-effect waves-light btn"  type="submit"name='blog_id' value='{{blog.id}}'><img style="width: 36px;"  src="{% static 'images/liked.png' %}">Liked</button>
                             {% else %}
-                                <button class="btn-floating btn-large waves-effect waves-light red" type="submit"name='blog_id' value='{{blog.id}}'><img  id="heart" src="{% static 'images/heart.png' %}">like?</button>
+                                <button  class="waves-effect waves-light btn" type="submit"name='blog_id' value='{{blog.id}}'><img style="width: 36px;height: 30px;"  id="heart" src="{% static 'images/heart.png' %}">like?</button>
                             {% endif %}
             
                         </form>

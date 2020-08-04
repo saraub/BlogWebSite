@@ -5,58 +5,75 @@
 
 
   
-  <h2 class='header1'>My Page</h2>
+  <label style="font-size: large; text-align: center;">My Page</h2>
   
-  <div>
+  <div class="container" style="width:fit-content;">
     {% for blog in blogposts %}
-    <div class="leftcolumn">
-      <div class="card">
-        <h2>{{blog.name}}</h2>
-        <h5>{{blog.date_created}}</h5>
-        
-        <p>{{blog.content}}</p>
-        <form method="POST"  action="{% url 'blog_edit' blog.id %}">
-          {% csrf_token %} 
-          <button class='btn1' value="{{blog.id}}" type="submit">Edit
+    <div class="row">
+      <div class="col s9">
+        <div class="">
 
-          </button>
-        </form>
-           
-        <a href="{% url 'delete' blog.id %}"><button class='btn1'>Delete the post</button></a>
-        
+          <h2>{{blog.name}}</h2>
+          <h5>{{blog.date_created}}</h5>
+          
+          <p>{{blog.content}}</p>
+          <form method="POST"  action="{% url 'blog_edit' blog.id %}">
+            {% csrf_token %} 
+            <button style="margin-bottom: 4px;" class="waves-effect waves-light btn" value="{{blog.id}}" type="submit">Edit
+  
+            </button>
+          </form>
+             
+          <a href="{% url 'delete' blog.id %}"><button class="waves-effect waves-light btn">Delete the post</button></a>
+          
         </div>
+
+      </div>
+      
+      <div class="col s3" >
+        <div class="collection">
+          <label style="font-size: 48px;">about me</label>
+          
+          <div class="collection-item avatar">
+            
+            
+            
+            
+            
+            <img class="circle" style="width: 47px;" src="{{user.image.url}}" >
+            <p style="font-weight: bold;">{{user.name}}</p>
+            <br>
+            <p class="title">{{user.profile}}</p>
+            <form class="" action="{% url 'profile_settings' %}">
+              <button class="waves-effect waves-light btn " >Change Profile</button> 
+            </form>
+
+          </dvi>
+          
+        </div>
+        <div class="card">
+          <label style="font-size: 40px; ">Liked Post</label>
+          {% for post in likedpost%}
+          <div>
+            
+            {{post.name}} written by <a href="{% url 'userpage' %}">{{post.user.username}}</a> 
+           
+          </div>
+          {% endfor %} 
+        </div>
+        <div class="card follow_me">
+          <label style="font-size: 40px;">Follow Me</label>
+          <p><img class="circle" style="width: 47px;" src ="/blogwebsite_var1/static/images/fb.png"><a  href="{{user.facebok}}">Facebook</a></p><p><img class="circle" style="width: 47px;" src ="/blogwebsite_var1/static/images/tw.png"><a href="{{user.twitter}}">Twitter</a></p>
+        </div>
+      </div>
+      
 
        
     </div>
     {% endfor %} 
     
      
-    <div >
-      <div class="card">
-        <h2 style="display: inline">About Me</h2><span>{{user.name}}</span>
-        <form action="{% url 'profile_settings' %}">
-          <button class="btn1">Change Profile</button> 
-        </form>
-        
-        <div class="" >
-          <img class='pr_img' src="{{user.image.url}}" ></div>
-        <p style="text-align: center;">{{user.profile}}</p>
-      </div>
-      <div class="card">
-        <h3>Liked Post</h3>
-        {% for post in likedpost%}
-        <div>
-          
-          {{post.name}} by <a href="{% url 'userpage' %}">{{post.user.username}}</a> 
-         
-        </div>
-        {% endfor %} 
-      </div>
-      <div class="card follow_me">
-        <h3>Follow Me</h3>
-        <p><img class="icon_foto" src ="/blogwebsite_var1/static/images/fb.png"><a href="{{user.facebok}}">Facebook</a></p><p><img class="icon_foto" src ="/blogwebsite_var1/static/images/tw.png"><a href="{{user.twitter}}">Twitter</a></p>
-      </div>
-    </div>
+    
   </div>
 
 
