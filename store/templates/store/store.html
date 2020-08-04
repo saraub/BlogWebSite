@@ -2,55 +2,62 @@
 {% load static %}
 {% block content %}
 
-
-
-    <div>
-
-        <h2 class='header1'>DASH BOARD</h2>
+    <h2 class='header1'>My Feed</h2>
     
-        {% for blog in blogposts %}
-        
+    {% for blog in blogposts %}
     
-        <div class="wrapper blogpost">
-            <div >
-                {{blog.name}} 
-                <img class="icon" src="{{blog.user.customer.image.url}}" >
-            </div>
+
+    <div class="row" style="background-color: darkcyan">
+        <div class="col s12" >
+            <ul class="collection blue-grey darken-1">
+                <li class="collection-item avatar" style="background-color: darkcyan">
+                    <img class="circle"  src="{{blog.user.customer.image.url}}" >
+                    <span class="title">{{blog.name}}</span>
+                    <p class="title">{{blog.content}}</p>
+                    <p>
+                        <form method="POST" action="{% url 'comment' %}">
+                            {% csrf_token%}
+                            <div >
+
+                            </div>
+                            <button style="margin-bottom: 4px;" class="waves-effect waves-light btn" type="submit" name='blog_id' value="{{blog.id}}">Leave comment</button>
+                        </form>
+                        
+                        <form action="{% url 'likes' %}" method="POST">
+                            {% csrf_token%}
+                            {% if blog.is_liked %}
+                                <button class="waves-effect waves-light btn" type="submit"name='blog_id' value='{{blog.id}}'><img  id="heart" src="{% static 'images/liked.png' %}">Liked</button>
+                            {% else %}
+                                <button class="btn-floating btn-large waves-effect waves-light red" type="submit"name='blog_id' value='{{blog.id}}'><img  id="heart" src="{% static 'images/heart.png' %}">like?</button>
+                            {% endif %}
+            
+                        </form>
+                    </p>
+                    <p>
+                        {{blog.date_created}}
+                    </p>
+                </li>
                 
-            <div>
-                {{blog.content}}
-            </div>
-            <form method="POST" action="{% url 'comment' %}">
-                {% csrf_token%}
+                
+            </ul>
+                
+            
+                
+            
+            
 
-                <button type="submit" name='blog_id' value="{{blog.id}}" class="btn1">Leave comment</button>
-            </form>
+            
+                
+            
+            
+            
            
-            <form action="{% url 'likes' %}" method="POST">
-                {% csrf_token%}
-                {% if blog.is_liked %}
-                    <button class='btn1' type="submit"name='blog_id' value='{{blog.id}}'><img  id="heart" src="{% static 'images/liked.png' %}"> liked</button>
-                {% else %}
-                    <button class='btn1' type="submit"name='blog_id' value='{{blog.id}}'><img  id="heart" src="{% static 'images/heart.png' %}"> like?</button>
-                {% endif %}
-
-            </form>
-            
-            
-            <div>
-                {{blog.date_created}}
-            </div>
             {{blog.comment}}
-    
-        
-            
+
         </div>
-        {% endfor %}
-       
-    
     
     </div>
-
+    {% endfor %}
 
 {% endblock %}
 

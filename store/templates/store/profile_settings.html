@@ -4,12 +4,12 @@
 
 
 <br>
-<div class="row">
+<div class="row" style="color: green; font-weight:bold;">
 	<div class="col-md-3">
 		<div class="card card-body">
-			<a class="btn1" href="{% url 'store' %}"> &#8592; Back to Profile</a>
+			<a class="waves-effect waves-light btn" href="{% url 'store' %}"> &#8592; Back to Profile</a>
 			<hr>
-			<h3 style="text-align: center">Profile Settings</h3>
+			<h4 style="text-align: center">Profile Settings</h4>
 			<hr>
 			<img class="profile-pic" src="{{request.user.customer.image.url}}" >
 		
@@ -35,14 +35,14 @@
 					{{form.profile.as_textarea}}
 				</div>
 				<div>
-					<h6>facebook Url</h6>
+					<h6>Facebook Url</h6>
 					{{form.facebok}}
 					<h6>Twitter Url</h6>
 					{{form.twitter}}
 				</div>
 				<br>
 	
-			<input class="btn btn-primary" type="submit" name="Update Information">
+			<input class="secondary-content waves-effect waves-light btn" type="submit" name="Update Information">
 			</form>
 		</div>
 	</div>

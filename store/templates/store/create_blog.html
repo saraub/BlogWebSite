@@ -2,13 +2,10 @@
 {% load static %}
 {% block content %}
 
-
-
-
     <div style="color: tomato;">
         <form method="POST" action="" >
             <div>
-                <h3>New Entry</h3>
+                <h3>New Blog Entry</h3>
                 {% csrf_token %}
                 <h6>Title</h6>
                 {{form.name}}
@@ -18,15 +15,12 @@
           
                 {{form.content.as_textarea}}
     
-                
                 <br>
               
                 <div>
-                    <input class="btn1" type="submit" name="Update Information">
+                    <input class="waves-effect waves-light btn" type="submit" name="Update Information">
                 </div>
-                
-                
-           
+            
             </div>
         </form>
            
