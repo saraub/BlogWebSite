@@ -1,6 +1,6 @@
                                       BlogWebSite
 
-![<Entry screen](https://lh3.googleusercontent.com/JQMbjpwKxQoaWXg2ola4vKOWRBEojJwnD7_ZPZR8-x-jNIMWQNrJQp3I-GD8gm0j6g6ydapa6ZC_mEdSqWdv5y1MXBgGvtIhEHq83z_QUVIe0VH8aLpxZDdA3ZAzGMSQawpyKj-A6wvgnaWeO7t6XVVM1zs5Y41HmdELAp7tSTDTzp2d106ofWNAZQPTY9csODloWdaX1QmUsnvwVE6bm3Jvv2qIld5hZA17DVBn2o40dk23844ZWBpUPhXcR9jhtUrveyjVbs8jxsAzYdO98zIf1xlaDrzlUlz74XWAB2WIyn9j_l1ZnzzGZzExMRj0GzDm9L-VGeXKUng-7necrFRtiSTtWMonsK9b3RsxCDu_iBdEB5wfltLDAaU_n0ETATpUjzuyAb1ZaRYpq1uhLHY01JlTnl0ehjPQTgI4ADN9-If9J36mLOA3WN2XSl2JgNh8eecUqMTZGpf2qP4g6Vel2hL1fC4cH3EtDgjUXHTBonYzHykNXqSLg36vc2zCy1VhHkCN2VbslJEO-DCaBF_NMxAdqu8-BouFuZEVx9NO_Q8xpgvQXX8btm1YZ6QJVfxiVR03gM6ZNbSqTSdxp5aU-XahfdmShkjb1gsZvX4QKS3flzhD1ST3uKkdg8CMafp9rt-qSbPqZX1W1E3stCg2S2kZBEZsdOJ1zoRpkY5VUhBid2OIuI721m0c=w883-h808-no?authuser=0)
+![<Entry screen](https://photos.app.goo.gl/6NpErTrrJ8A7SVJWA)
 Read others blog posts. Like and dislike as you wish.
 
 
